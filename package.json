@@ -1,0 +1,23 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pstuteville/seventh-sea.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pstuteville/seventh-sea/issues"
+  },
+  "homepage": "https://github.com/pstuteville/seventh-sea#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "lodash": "^4.17.21"
+  }
+}
