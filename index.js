@@ -19,7 +19,7 @@ discordClient.on('message', msg => {
   embed.setAuthor(msg.author.username, msg.author.avatarURL());
   embed.setDescription('Some description here');
   embed.setTitle(msg.author.username);
-  embed.attachFiles([msg.author.avatarURL()])
+  embed.attachFiles([msg.author.avatarURL()]);
 
   _.each(eachParagraph, function(p){
     if (_.startsWith(p, '::')) {
@@ -35,7 +35,7 @@ discordClient.on('message', msg => {
     }
   });
   
-    msg.channel.send(embed)
+  msg.channel.send(embed);
   
   //var linkRegexp = /\[.+\]\(.+\)/gm;
   //var actionsRegexp = /::.*::/gm;
