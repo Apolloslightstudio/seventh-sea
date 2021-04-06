@@ -17,8 +17,8 @@ discordClient.on('message', msg => {
   var embed = new Discord.MessageEmbed();
 
   embed.setAuthor(msg.author.username, msg.author.avatarURL());
-  embed.setDescription('Some description here');
   embed.setTitle(msg.channel.parent.name);
+  embed.setDescription('Some description here');
   embed.attachFiles([msg.author.avatarURL()]);
 
   _.each(eachParagraph, function(p){
