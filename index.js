@@ -22,6 +22,7 @@ discordClient.on('message', msg => {
   embed.attachFiles([msg.author.avatarURL()]);
 
   _.each(eachParagraph, function(p){
+    p = _.trim(p);
     if (_.startsWith(p, '::')) {
       embed.addField('Action', p);
     }
