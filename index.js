@@ -12,7 +12,29 @@ discordClient.on('message', msg => {
   console.log(msg.author.bot);
   if (msg.author.bot) return;
 
+  
+    var eachParagraph = _.split(msg.content, '\n\n');
+    var embed = new Discord.MessageEmbed();
 
+    embed.setAuthor(msg.author.username, msg.author.avatarURL());
+    embed.setDescription('Some description here');
+    embed.setTitle(msg.author.username);
+    embed.attachFiles([msg.author.avatarURL()])
+
+    _.each(eachParagraph, function(p){
+      if (_.startsWith(p, '::')) {
+        embed.addField('Action', p);
+      }
+
+      if (_.startsWith(p, '"')) {
+        embed.addField('Quote', p);
+      }
+
+      if (_.startsWith(p, '[')) {
+        embed.addField('Rolls', p);
+      }
+    });
+  
   //var linkRegexp = /\[.+\]\(.+\)/gm;
   //var actionsRegexp = /::.*::/gm;
   //var quotesRegexp = /".*"/gm;
