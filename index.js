@@ -31,7 +31,7 @@ discordClient.on('message', msg => {
     } else if (_.startsWith(p, '**')) {
       embed.addField('Rolls', p.substr(2));
     } else { 
-      embed.addField('', p);
+      embed.addField('.', p);
       //
       //
     }
