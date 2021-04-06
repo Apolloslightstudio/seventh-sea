@@ -31,7 +31,7 @@ discordClient.on('message', msg => {
       embed.addField('Quote', p);
     }
 
-    if (_.startsWith(p, '[')) {
+    if (_.startsWith(p, '**')) {
       embed.addField('Rolls', p);
     }
   });
