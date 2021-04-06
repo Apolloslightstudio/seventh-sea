@@ -13,27 +13,29 @@ discordClient.on('message', msg => {
   if (msg.author.bot) return;
 
   
-    var eachParagraph = _.split(msg.content, '\n\n');
-    var embed = new Discord.MessageEmbed();
+  var eachParagraph = _.split(msg.content, '\n\n');
+  var embed = new Discord.MessageEmbed();
 
-    embed.setAuthor(msg.author.username, msg.author.avatarURL());
-    embed.setDescription('Some description here');
-    embed.setTitle(msg.author.username);
-    embed.attachFiles([msg.author.avatarURL()])
+  embed.setAuthor(msg.author.username, msg.author.avatarURL());
+  embed.setDescription('Some description here');
+  embed.setTitle(msg.author.username);
+  embed.attachFiles([msg.author.avatarURL()])
 
-    _.each(eachParagraph, function(p){
-      if (_.startsWith(p, '::')) {
-        embed.addField('Action', p);
-      }
+  _.each(eachParagraph, function(p){
+    if (_.startsWith(p, '::')) {
+      embed.addField('Action', p);
+    }
 
-      if (_.startsWith(p, '"')) {
-        embed.addField('Quote', p);
-      }
+    if (_.startsWith(p, '"')) {
+      embed.addField('Quote', p);
+    }
 
-      if (_.startsWith(p, '[')) {
-        embed.addField('Rolls', p);
-      }
-    });
+    if (_.startsWith(p, '[')) {
+      embed.addField('Rolls', p);
+    }
+  });
+  
+    msg.channel.send(embed)
   
   //var linkRegexp = /\[.+\]\(.+\)/gm;
   //var actionsRegexp = /::.*::/gm;
@@ -77,8 +79,8 @@ discordClient.on('message', msg => {
       //embedOptions['description'] = quotes.join('\n');
     //}
 
-    //discordClient.channels.cache.get('CHANNEL ID').send(...)
-    //msg.guild.channels.cache.find(i => i.name === 'CHANNEL NAME').send(...)
+    //discordClient.channels.cache.get('CHANNEL ID').send(...) Not Active previously
+    //msg.guild.channels.cache.find(i => i.name === 'CHANNEL NAME').send(...) Not Active previously
     
     //msg.channel.send({
       //embed: embedOptions
