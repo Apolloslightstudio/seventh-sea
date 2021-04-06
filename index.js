@@ -33,7 +33,7 @@ discordClient.on('message', msg => {
     }
 
     if (_.startsWith(p, '**')) {
-      embed.addField('Rolls', p.substr(2).slice(0,-2));
+      embed.addField('Rolls', p.substr(2));
     }
   });
   
