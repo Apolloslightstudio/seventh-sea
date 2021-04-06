@@ -24,15 +24,16 @@ discordClient.on('message', msg => {
   _.each(eachParagraph, function(p){
     p = _.trim(p);
     if (_.startsWith(p, '::')) {
-      embed.addField('Action', p);
+      embed.addField('Action', p.substr(2).slice(0,-2));
     }
 
     if (_.startsWith(p, '"')) {
-      embed.addField('Quote', p);
+      embed.addField('Quote', p
+                    );
     }
 
     if (_.startsWith(p, '**')) {
-      embed.addField('Rolls', p);
+      embed.addField('Rolls', p.substr(2).slice(0,-2));
     }
   });
   
