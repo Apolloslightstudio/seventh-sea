@@ -21,6 +21,10 @@ discordClient.on('message', msg => {
   var actions = msg.content.match(actionsRegexp);
   var quotes = msg.content.match(quotesRegexp);
 
+  links = links || [];
+  actions = actions || [];
+  quotes = quotes || [];
+  
   if (links.length > 0 || actions.length > 0 || quotes.length > 0) {
     var embedOptions = {
       color: '#0099ff',
