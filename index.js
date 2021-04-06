@@ -23,18 +23,19 @@ discordClient.on('message', msg => {
 
   _.each(eachParagraph, function(p){
     p = _.trim(p);
+    
     if (_.startsWith(p, '::')) {
       embed.addField('Action', p.substr(2).slice(0,-2));
-    }
-
-    if (_.startsWith(p, '"')) {
-      embed.addField('Quote', p
-                    );
-    }
-
-    if (_.startsWith(p, '**')) {
+    } else if (_.startsWith(p, '"')) {
+      embed.addField('Quote', p);
+    } else if (_.startsWith(p, '**')) {
       embed.addField('Rolls', p.substr(2));
+    } else { 
+      embed.addField('', p);
+      //
+      //
     }
+    
   });
   
   msg.channel.send(embed);
