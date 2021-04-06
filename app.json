@@ -1,0 +1,8 @@
+{
+  "name": "Seventh Sea Bot",
+  "description": "Bot",
+  "repository": "https://github.com/pstuteville/seventh-sea",
+  "logo": "https://cdn.rawgit.com/pstuteville/gnoll-bot/master/public/node.svg",
+  "keywords": ["node", "heroku", "discord"],
+  "image": "heroku/nodejs"
+}

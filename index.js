@@ -56,3 +56,6 @@ discordClient.on('message', msg => {
     });
   }
 });
+
+// this will pull from .env file locally, or ENV from heroku
+discordClient.login(process.env.TOKEN);
