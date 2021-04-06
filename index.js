@@ -55,6 +55,9 @@ discordClient.on('message', msg => {
       embedOptions['description'] = quotes.join('\n');
     }
 
+    //discordClient.channels.cache.get('CHANNEL ID').send(...)
+    //msg.guild.channels.cache.find(i => i.name === 'CHANNEL NAME').send(...)
+    
     msg.channel.send({
       embed: embedOptions
     });
