@@ -35,7 +35,8 @@ discordClient.on('message', msg => {
       //
       //
     }
-    
+  
+  embed.setFooter("\u3000".repeat(10/100)+"|")
   });
   
   msg.channel.send(embed);
