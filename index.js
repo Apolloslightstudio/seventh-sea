@@ -20,6 +20,7 @@ discordClient.on('message', msg => {
   embed.setTitle(msg.channel.parent.name);
   embed.setDescription('Some description here');
   embed.attachFiles([msg.author.avatarURL()]);
+  embed.setFooter("\u3000".repeat(10/10000)+"|")
 
   _.each(eachParagraph, function(p){
     p = _.trim(p);
@@ -35,8 +36,7 @@ discordClient.on('message', msg => {
       //
       //
     }
-  
-  embed.setFooter("\u3000".repeat(10/10000)+"|")
+    
   });
   
   msg.channel.send(embed);
