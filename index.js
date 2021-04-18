@@ -2,6 +2,8 @@ var _ = require('lodash');
 
 const Discord = require('discord.js');
 const discordClient = new Discord.Client();
+const hljs = require('./highlight.js');
+const highlightedCode = hljs.highlightAuto('<span>Hello World!</span>').value
 
 discordClient.on('ready', () => {
   discordClient.user.setActivity('something something', {type: 'SAILING'});
