@@ -14,7 +14,8 @@ discordClient.on('message', msg => {
 
   
   var eachParagraph = _.split(msg.content, '\n\n');
-  var embed = new Discord.MessageEmbed();
+  var embed = new Discord.RichEmbed();
+  //var embed = new Discord.MessageEmbed();
 
   embed.setAuthor(msg.author.username, msg.author.avatarURL());
   embed.setTitle(msg.channel.parent.name);
